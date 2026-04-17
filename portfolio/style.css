@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #38bdf8;
+    box-shadow: 0 0 20px #38bdf8;
+}
+
+/* CARD */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* SKILLS CONTAINER */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* SKILL BOX */
+.skill-box {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    animation: floatBox 4s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatBox {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* DELAY FOR SWAP EFFECT */
+.skill-box:nth-child(1) { animation-delay: 0s; }
+.skill-box:nth-child(2) { animation-delay: 0.5s; }
+.skill-box:nth-child(3) { animation-delay: 1s; }
+.skill-box:nth-child(4) { animation-delay: 1.5s; }
+.skill-box:nth-child(5) { animation-delay: 2s; }
+.skill-box:nth-child(6) { animation-delay: 2.5s; }
+
+/* ICONS */
+.skill-box i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* COLORS */
+.python { color: #3776AB; }
+.java { color: #f89820; }
+.html { color: #e34c26; }
+.sql { color: #4DB33D; }
+.linux { color: #FCC624; }
+.c { color: #00599C; }
+
+/* PERCENT BADGE */
+.percent {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 11px;
+    background: #38bdf8;
+    color: black;
+    padding: 3px 6px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px #38bdf8;
+}
+
+/* FIXED HOVER (NO BLUE STRIP) */
+.skill-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #38bdf8;
+}
+
+/* PROJECTS */
+.project {
+    background: #334155;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.03);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #22c55e;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.linkedin {
+    background: #0a66c2;
+}
+
+.linkedin:hover {
+    background: #004182;
+}
+
+/* CONTACT */
+.contact-links {
+    margin-top: 15px;
+}
+
+/* GLOBAL LINK FIX */
+a {
+    text-decoration: none;
+}
+
+/* PARTICLES BACKGROUND */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+.cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: #38bdf8;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px #38bdf8, 0 0 30px #38bdf8;
+    z-index: 9999;
+}
+.card {
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.btn:hover {
+    box-shadow: 0 0 15px #22c55e;
+}
+.skill-box:hover {
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #38bdf8;
+    }
+    to {
+        box-shadow: 0 0 25px #38bdf8;
+    }
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

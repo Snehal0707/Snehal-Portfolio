@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snehal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <!-- HERO SECTION -->
+<section class="hero" id="home">
+    <img src="Profile.jpg" alt="My Photo" class="profile-img">
+    <h1>Hi, I'm Snehal 👋</h1>
+    <p><span id="typing"></span></p>
+    <p><a href="SNEHAL RESUME.pdf" download class="btn">Download Resume</a></p>
+    <p><a href="https://www.linkedin.com/in/snehal-somane-6bb569324" target="_blank" class="btn linkedin">LinkedIn</a></p>
+</section>
+
+    <!-- ABOUT -->
+    <section class="card reveal" id="about">
+        <h2>About Me</h2>
+        <p> I am a passionate and motivated developer with a strong interest in Python programming and Machine Learning. I enjoy building real-world projects that solve practical problems, such as traffic prediction systems and automated trading bots.
+
+I have experience working with technologies like SQL, and data-driven applications, and I continuously strive to improve my problem-solving and development skills. I am particularly interested in developing intelligent systems that combine software development with data analysis.
+
+I am currently focused on enhancing my technical expertise and building impactful projects that demonstrate my abilities and creativity</p>
+<p>Name : SNEHAL SANJAY SOMANE </p>
+<p>Date of birth : July 7, 2005</p>
+<p>Address : Borgoan, India</p>
+<p>Pin code : 591216 </p>
+<p>Email id : snehalsomane@gmail.com</p>
+<p>Phone : 9164924034 </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="card reveal" id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills-container">
+
+    <div class="skill-box">
+        <i class="fab fa-python python"></i>
+        <span>Python</span>
+        <span class="percent">80%</span>
+    </div>
+
+    <div class="skill-box">
+        <i class="fab fa-java java"></i>
+        <span>Java</span>
+        <span class="percent">60%</span>
+    </div>
+
+    <div class="skill-box">
+        <i class="fab fa-html5 html"></i>
+        <span>HTML</span>
+        <span class="percent">80%</span>
+    </div>
+
+    <div class="skill-box">
+        <i class="fas fa-database sql"></i>
+        <span>SQL</span>
+        <span class="percent">80%</span>
+    </div>
+
+    <div class="skill-box">
+        <i class="fab fa-linux linux"></i>
+        <span>Linux</span>
+        <span class="percent">50%</span>
+    </div>
+
+    <div class="skill-box">
+        <i class="fas fa-code c"></i>
+        <span>C</span>
+        <span class="percent">80%</span>
+    </div>
+
+</div>
+
+</section>
+
+    <!-- PROJECTS -->
+<section class="card reveal" id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>Traffic Prediction Congestion System</h3>
+        <p>ML model using weather data</p>
+        <a href="https://github.com/Snehal0707/traffic-congestion-system/tree/main" target="_blank" class="btn">View Code</a>
+    </div>
+
+    <div class="project">
+        <h3>Portfolio</h3>
+        <p>Using HTML and CSS</p>
+        <a href="#">View Code</a>
+    </div>
+
+</section>
+
+    <!-- CONTACT -->
+    <section class="card reveal" id="contact">
+    <h2>Contact</h2>
+
+    <p>📧 Email: snehalsomane@gmail.com</p>
+    <p>📱 Phone: 9164924034</p>
+
+    <div class="contact-links">
+        <a href="https://www.linkedin.com/in/snehal-somane-6bb569324" target="_blank" class="btn linkedin">
+            LinkedIn
+        </a>
+    </div>
+</section>
+<script>
+    const text = ["Developer", "ML Enthusiast", "Python Programmer", "AI Enthusiast"];
+    let i = 0;
+    let j = 0;
+    let currentText = "";
+    let isDeleting = false;
+
+    function type() {
+        currentText = text[i];
+        
+        if (!isDeleting) {
+            document.getElementById("typing").innerHTML = currentText.substring(0, j++);
+            if (j > currentText.length) {
+                isDeleting = true;
+                setTimeout(type, 1000);
+                return;
+            }
+        } else {
+            document.getElementById("typing").innerHTML = currentText.substring(0, j--);
+            if (j == 0) {
+                isDeleting = false;
+                i = (i + 1) % text.length;
+            }
+        }
+        setTimeout(type, isDeleting ? 50 : 100);
+    }
+
+    type();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    size: { value: 3 },
+    move: { speed: 2 },
+    line_linked: { enable: true }
+  }
+});
+</script>
+<div class="cursor"></div>
+<script>
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+</script>
+<script>
+function reveal() {
+    let reveals = document.querySelectorAll(".reveal");
+
+    for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        } else {
+            reveals[i].classList.remove("active");
+        }
+    }
+}
+
+window.addEventListener("scroll", reveal);
+</script>
+</body>
+<nav class="navbar">
+    <h2>Snehal</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</html>
